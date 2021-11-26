@@ -1,0 +1,35 @@
+﻿@model WebBankingASP.ViewModels.BankAccountListViewModel
+@{
+    ViewBag.Title = "Conti Correnti";
+}
+
+<h2>conti-correnti</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>id conto corrente</td>
+            <td>Iban conto corrente</td>
+            <td>id correntista</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var i in Model.Bank_Accounts)
+        {
+            <tr>
+                <td>@i.id</td>
+                <td>@i.iban</td>
+                <td>@i.fk_user</td>
+                <td>@Html.ActionLink("Dettaglio Conto", "Details", new { Id = i.id })</td>
+                <td>@Html.ActionLink("Movimenti Conto", "Movimenti", new { Id = i.id })</td>
+                <td>@Html.ActionLink("Bonifico", "Bonifico", new { Id = i.id, idConto = i.id, idConto2 = i.id })</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p>
+    @Html.ActionLink("Logout", "Logout")
+</p>
+

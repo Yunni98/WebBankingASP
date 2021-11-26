@@ -1,0 +1,54 @@
+﻿@model WebBankingASP.ViewModels.AccountMovementDetailViewModel
+@{
+    ViewBag.Title = "Movimento del Conto";
+}
+
+<h2>@Model.Title</h2>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Movement.id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Movement.id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Movement.date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Movement.date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Movement.@in)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Movement.@in)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Movement.@out)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Movement.@out)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Movement.description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Movement.description)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Lista Movimenti", "Movimenti")
+    @Html.ActionLink("Logout", "Logout")
+</p>

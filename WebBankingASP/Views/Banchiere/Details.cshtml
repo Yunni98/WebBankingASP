@@ -1,0 +1,41 @@
+﻿@model WebBankingASP.ViewModels.BankAccountDetailsViewModel
+@{
+    ViewBag.Title = Model.Title;
+}
+
+<h2>@Model.Title</h2>
+
+<div>
+    <h4>BankAccount</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Bank_Account.id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bank_Account.id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bank_Account.iban)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bank_Account.iban)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bank_Account.fk_user)
+        </dt>
+    </dl>
+    <dl class="form-horizontal">
+        <dd>
+            @Html.ActionLink("Modifca", "Update", new { id = Model.Bank_Account.id, id2 = Model.Bank_Account.id })
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Lista Conti", "Index")
+    @Html.ActionLink("Logout", "Logout")
+</p>

@@ -1,0 +1,37 @@
+﻿@model WebBankingASP.ViewModels.AccountMovementListViewModel
+@{
+    ViewBag.Title = "Movimenti";
+}
+
+<h2>Movimenti Conti Correnti</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>date</td>
+            <td>in</td>
+            <td>out</td>
+            <td>description</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model.listMovement)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.id)</td>
+                <td>@Html.DisplayFor(modelItem => item.date)</td>
+                <td>@Html.DisplayFor(modelItem => item.@in)</td>
+                <td>@Html.DisplayFor(modelItem => item.@out)</td>
+                <td>@Html.DisplayFor(modeliItem => item.description)</td>
+                <td>@Html.ActionLink("Dettaglio Movimento", "Movimento", new { Id1 = item.fk_bankAccount, Id2 = item.id, idMovimento = item.id })</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p>
+    @Html.ActionLink("Logout", "Logout")
+</p>
+
